@@ -45,7 +45,7 @@
         <section class="hero overlay">
             <div class="container">
                 <h1 class="main-title">Эффективные решения для вашего бизнеса</h1>
-                <button type="button" class="main-button">
+                <button type="button" class="main-button" data-modal-open>
                     Заказать услугу
                 </button>                
             </div>           
@@ -100,17 +100,16 @@
                 <h2 class="secondary-title">Чем мы занимаемся</h2>
                 <ul class="works-list">
                     <li>
-                        <!-- Чи є фото посиланням -->
-                        <!-- <a href="#">
-                        <img src="/img/box1.jpg" alt="Верстка сайтов" width="370">
-                        </a> -->
                         <img src="./img/box1.jpg" alt="Верстка сайтов" width="370" class="no-gap">
+                        <p class="work-description">Десктопные приложения</p>
                     </li>
                     <li>
                         <img src="./img/box2.jpg" alt="Создание мобильных приложений" width="370" class="no-gap">
+                        <p class="work-description">Мобильные приложения</p>
                     </li>
                     <li>
                         <img src="./img/box3.jpg" alt="Разработка дизайна" width="370" class="no-gap">
+                        <p class="work-description">Дизайнерские решения</p>
                     </li>
                 </ul>
             </div>
@@ -363,5 +362,18 @@
             </div>  
         </div>
     </footer>    
+
+
+    <div  class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button type="button" class="modal-button" data-modal-close>                
+                <svg class="close" width="11" height="11">
+                    <use href="./img/symbol-defs.svg#close"></use>
+                </svg>                
+            </button>
+        </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
 </body>
 </html>

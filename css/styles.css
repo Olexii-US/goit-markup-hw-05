@@ -150,13 +150,9 @@ header {
   left: 0;
   bottom: 0;
 
-
   position: absolute;
   display: inline-block;
-
 }
-
-
 
 .nav-link.current {
   color: var(--accent-colour);
@@ -169,6 +165,11 @@ header {
 {
   color: var(--accent-colour);
 }
+
+/* .contacts-link {
+  transition-property: color;
+  transition-duration: 1s;
+} */
 
 .contacts-link {
   font-weight: 500;
@@ -303,7 +304,12 @@ header {
 }
 
 
-/* чим ми займаємось */
+.secondary-title {
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+  margin-bottom: 50px;
+}
 
 .works {
   padding-top: 0;
@@ -317,12 +323,27 @@ header {
   display: block;
 }
 
-.secondary-title {
-  font-size: 36px;
-  line-height: 1.17;
-  text-align: center;
-  margin-bottom: 50px;
+.works-list li {
+  position: relative;
 }
+
+.work-description {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+
+  color: var(--primary-white-color);
+  background-color: rgba(47, 48, 58, 0.8);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
 /* наша команда */
 
 .team {
@@ -509,6 +530,78 @@ footer {
 .team-social:not(:last-child) {
   margin-right: 10px;
 }
+
+
+
+/* Модальне вікно */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* width: 100vw;
+  height: 100vw; */
+  background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;  
+  transition: opacity 250ms linear;
+  }
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: visible;
+  /* visibility: hidden; */
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.5);
+
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: flex-end;
+
+  width: 528px;
+  height: 581px;
+  padding: 8px;
+
+  background-color: #FFFFFF;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px; 
+
+  transform: translate(-50%, -50%) scale(1);
+
+  transition: transform 250ms cubic-bezier(.23,.79,.83,.67);
+}
+
+
+.modal-button {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  background-color: var(--main-background)
+}
+
+.close {
+  fill: var(--logo-black)
+}
+
 
 /* portfolio */
 /* Фільтр */
